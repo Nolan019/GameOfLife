@@ -14,13 +14,13 @@ public void setup () {
   Interactive.make( this );
 
 
-  //your code to initialize buttons goes here
+  
 
 buttons = new Life[NUM_ROWS][NUM_COLS];
 
 
 
-  //your code to initialize buffer goes here
+ 
   boolean buffer[][] = new boolean[NUM_ROWS][NUM_COLS];
 }
 
@@ -40,16 +40,23 @@ for(int r = 0; r < NUM_ROWS; r++)
 }
 
 public void keyPressed() {
-  //your code here
+ if(running = true)
+ running = false;
+ else
+ running = true; 
 }
 
 public void copyFromBufferToButtons() {
- 
+ for(int r = 0; r < NUM_ROWS; r++)
+    for(int c = 0; c < NUM_COLS; c++)
+      buttons[r][c] = new Life(NUM_ROWS,NUM_COLS);
     
 }
 
 public void copyFromButtonsToBuffer() {
-  //your code here
+   for(int r = 0; r < NUM_ROWS; r++)
+    for(int c = 0; c < NUM_COLS; c++)
+      buttons[r][c] = (NUM_ROWS,NUM_COLS);
 }
 
 public boolean isValid(int r, int c) {
